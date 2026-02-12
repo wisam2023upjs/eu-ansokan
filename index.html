@@ -7,6 +7,56 @@
   <meta name="description" content="Ansöknings- och vägledningssida för studenter som vill söka läkarstudier inom EU." />
 
   <style>
+   .muted{ color:#555; }
+
+.process{
+  margin-top: 12px;
+  display: grid;
+  gap: 12px;
+}
+
+.step{
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 12px;
+  align-items: start;
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 16px;
+  padding: 14px;
+}
+
+.badge{
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  background: #111;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+}
+
+.step h3{
+  margin: 0 0 6px;
+  font-size: 16px;
+}
+
+.step p{
+  margin: 0;
+  color: #444;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.cta-row{
+  margin-top: 14px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
     :root{
       --max: 1100px;
       --bg: #fafafa;
