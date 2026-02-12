@@ -3,209 +3,89 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ansök – Läkarstudier inom EU</title>
-  <meta name="description" content="Ansök om vägledning för att söka läkarstudier inom EU. Tydlig process, krav, tidslinje och stöd." />
+  <title>EU-Ansökan – Läkarstudier inom EU</title>
+  <meta name="description" content="Ansöknings- och vägledningssida för studenter som vill söka läkarstudier inom EU." />
 
   <style>
-    :root { --max: 1100px; }
-    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Arial,sans-serif; color:#111; background:#fafafa; }
-    header { position:sticky; top:0; background:rgba(250,250,250,.92); backdrop-filter: blur(10px); border-bottom:1px solid #e8e8e8; z-index:10; }
-    nav { max-width:var(--max); margin:0 auto; padding:14px 18px; display:flex; justify-content:space-between; align-items:center; gap:12px; }
-    nav a { color:#111; text-decoration:none; font-weight:700; }
-    .btn { display:inline-block; padding:12px 16px; border-radius:12px; background:#111; color:#fff; text-decoration:none; font-weight:800; }
-    .btn.outline { background:transparent; color:#111; border:1px solid #111; }
-
-    main { max-width:var(--max); margin:0 auto; padding:28px 18px 80px; }
-    .hero { background:#fff; border:1px solid #e8e8e8; border-radius:18px; padding:22px; display:grid; grid-template-columns: 1.2fr .8fr; gap:18px; }
-    h1 { font-size:40px; margin:0 0 10px; line-height:1.1; }
-    p { margin:0 0 14px; color:#333; }
-    .pill { display:inline-block; font-size:13px; padding:6px 10px; border:1px solid #ddd; border-radius:999px; background:#fff; margin-bottom:10px; }
-
-    .grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:14px; margin-top:18px; }
-    .card { background:#fff; border:1px solid #e8e8e8; border-radius:16px; padding:16px; }
-    .card h3 { margin:0 0 8px; }
-    .section { margin-top:26px; }
-    .section h2 { margin:0 0 10px; font-size:24px; }
-
-    details { background:#fff; border:1px solid #e8e8e8; border-radius:14px; padding:12px 14px; }
-    summary { cursor:pointer; font-weight:800; }
-    footer { border-top:1px solid #e8e8e8; padding:18px; text-align:center; color:#666; }
-
-    input, select { width:100%; padding:12px; border:1px solid #ddd; border-radius:12px; font-size:15px; background:#fff; }
-    .row { display:grid; grid-template-columns: 1fr 1fr; gap:10px; }
-
-    @media (max-width: 900px){
-      .hero{ grid-template-columns: 1fr; }
-      .grid{ grid-template-columns: 1fr; }
-      h1{ font-size:32px; }
-      .row{ grid-template-columns: 1fr; }
+    :root{
+      --max: 1100px;
+      --bg: #fafafa;
+      --card: #ffffff;
+      --text: #111111;
+      --muted: #444;
+      --border: #e8e8e8;
+      --shadow: 0 10px 25px rgba(0,0,0,.08);
+      --radius: 18px;
     }
-  </style>
-</head>
-<a class="wa-float"
-   href="https://wa.me/46739905006?text=Hej!%20Jag%20vill%20ans%C3%B6ka%20till%20l%C3%A4karstudier%20inom%20EU."
-   target="_blank"
-   rel="noopener">
-  WhatsApp
-</a>
 
-<body>
-<header>
-  <nav>
-    <a href="#top">EU-Ansökan</a>
-    <div style="display:flex; gap:10px; align-items:center;">
-      <a class="btn outline" href="#hur">Hur det funkar</a>
-      <a class="btn" id="applyTop" href="#">Ansök nu</a>
-    </div>
-  </nav>
-</header>
+    *{ box-sizing: border-box; }
+    body{
+      margin:0;
+      font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      color: var(--text);
+      background: var(--bg);
+    }
 
-<main id="top">
-  <section class="hero">
-    <div>
-      <span class="pill">Ansökning & vägledning</span>
-      <h1>Sök in till läkarstudier inom EU – med tydlig plan</h1>
-      <p>Fyll i en kort ansökan så får du hjälp med behörighet, dokument, tidslinje och hur du förbereder dig.</p>
+    /* Header */
+    header{
+      position: sticky;
+      top:0;
+      z-index: 50;
+      background: rgba(250,250,250,.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    nav{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 14px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 12px;
+    }
+    .brand{
+      font-weight: 900;
+      text-decoration:none;
+      color: var(--text);
+      letter-spacing: .2px;
+    }
+    .nav-actions{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
 
-      <div style="display:flex; gap:10px; flex-wrap:wrap;">
-        <a class="btn" id="applyHero" href="#">Starta ansökan</a>
-        <a class="btn outline" href="#krav">Se krav</a>
-      </div>
+    /* Buttons */
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 8px;
+      padding: 12px 16px;
+      border-radius: 14px;
+      text-decoration:none;
+      font-weight: 800;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: transform .15s ease, opacity .15s ease;
+      user-select:none;
+      white-space: nowrap;
+    }
+    .btn:hover{ transform: translateY(-1px); }
+    .btn.primary{ background:#111; color:#fff; }
+    .btn.outline{ background:transparent; color:#111; border-color:#111; }
+    .btn.wa{ background:#25D366; color:#fff; }
+    .btn.mail{ background:#2563eb; color:#fff; } /* blue */
 
-      <div class="grid">
-        <div class="card">
-          <h3>1) Ansök</h3>
-          <p>2–3 minuter. Du lämnar kontakt och mål.</p>
-        </div>
-        <div class="card">
-          <h3>2) Kontroll</h3>
-          <p>Vi kollar behörighet och nästa steg.</p>
-        </div>
-        <div class="card">
-          <h3>3) Plan</h3>
-          <p>Du får en tydlig väg fram till antagning.</p>
-        </div>
-      </div>
-    </div>
+    /* Layout */
+    main{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 26px 18px 90px;
+    }
 
-    <div class="card">
-      <h2 style="margin:0 0 10px;">Snabbval</h2>
-      <p style="margin:0 0 12px; color:#444;">Välj inriktning så skickas du till ansökan.</p>
-
-      <div class="row">
-        <select id="track">
-          <option value="medicine" selected>Läkarprogram</option>
-          <option value="dentistry">Tandläkarprogram</option>
-          <option value="other">Annat</option>
-        </select>
-
-        <select id="country">
-          <option value="eu" selected>EU (generellt)</option>
-          <option value="slovakia">Slovakien</option>
-          <option value="poland">Polen</option>
-          <option value="romania">Rumänien</option>
-        </select>
-      </div>
-
-      <div style="margin-top:12px;">
-        <a class="btn" id="applySide" href="#">Gå till ansökan</a>
-      </div>
-
-      <p style="margin-top:10px; font-size:12px; color:#666;">
-        *Du kan ändra detta senare i formuläret också.
-      </p>
-    </div>
-  </section>
-
-  <section class="section" id="hur">
-    <h2>Hur det funkar</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Behörighet</h3>
-        <p>Vi hjälper dig förstå exakt vilka kurser och dokument som krävs.</p>
-      </div>
-      <div class="card">
-        <h3>Ansökan</h3>
-        <p>Steg-för-steg: deadlines, översättningar, uppladdning och avgifter.</p>
-      </div>
-      <div class="card">
-        <h3>Förberedelse</h3>
-        <p>Studieplan + tips för inträdesprov/intervjuer (om det finns).</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="krav">
-    <h2>Krav (exempel)</h2>
-    <div class="card">
-      <ul style="margin:0; padding-left:18px; color:#333;">
-        <li>Behörighet via gymnasiet/Komvux (ofta Bio/Kemi/Fysik/Matte beroende på program)</li>
-        <li>Pass/ID</li>
-        <li>Betyg + ev. översättning</li>
-        <li>Ev. språkkrav beroende på skola</li>
-      </ul>
-      <p style="margin-top:10px; color:#666; font-size:13px;">Exakta krav beror på land och universitet.</p>
-    </div>
-  </section>
-
-  <section class="section" id="faq">
-    <h2>FAQ</h2>
-    <div style="display:grid; gap:10px;">
-      <details>
-        <summary>Är detta reklam?</summary>
-        <p style="margin-top:8px;">Det kan hållas helt neutralt: fokus på fakta, process och alternativ.</p>
-      </details>
-      <details>
-        <summary>Hur snabbt kan jag börja?</summary>
-        <p style="margin-top:8px;">Det beror på deadlines och provdatum. Efter ansökan får du en tidslinje.</p>
-      </details>
-      <details>
-        <summary>Kostar det något?</summary>
-        <p style="margin-top:8px;">Du kan ha gratis info och (om du vill) valfri coaching senare.</p>
-      </details>
-    </div>
-  </section>
-
-  <section class="section" id="kontakt">
-    <h2>Kontakt</h2>
-    <div class="card">
-      <p style="margin:0 0 10px;">Mail: <b>dinmail@example.com</b> • Telefon: <b>+46 …</b></p>
-      <p style="margin:0; color:#666;">Byt ut till dina riktiga uppgifter.</p>
-    </div>
-  </section>
-</main>
-
-<footer>
-  © <span id="y"></span> EU-Ansökan
-</footer>
-
-<script>
-  // ✅ BYT DENNA till din Google Form-länk
-  const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/XXXXXXXXXXXX/viewform";
-
-  function buildFormLink() {
-    const track = document.getElementById("track").value;
-    const country = document.getElementById("country").value;
-
-    // Vi skickar valen som URL-parametrar. (Google Form kan inte alltid auto-fylla utan "prefill",
-    // men detta är perfekt för tracking + kan användas på din egen backend senare.)
-    const url = new URL(GOOGLE_FORM_URL);
-    url.searchParams.set("program", track);
-    url.searchParams.set("land", country);
-    return url.toString();
-  }
-
-  function wireApply(btnId){
-    const el = document.getElementById(btnId);
-    el.addEventListener("click", (e) => {
-      e.preventDefault();
-      window.location.href = buildFormLink();
-    });
-  }
-
-  ["applyTop","applyHero","applySide"].forEach(wireApply);
-  document.getElementById("y").textContent = new Date().getFullYear();
-</script>
-</body>
-</html>
-
+    .hero{
+      background: var(--card);
+      border: 1px solid var(--border
