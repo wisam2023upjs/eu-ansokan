@@ -7,56 +7,6 @@
   <meta name="description" content="Ansöknings- och vägledningssida för studenter som vill söka läkarstudier inom EU." />
 
   <style>
-   .muted{ color:#555; }
-
-.process{
-  margin-top: 12px;
-  display: grid;
-  gap: 12px;
-}
-
-.step{
-  display: grid;
-  grid-template-columns: 44px 1fr;
-  gap: 12px;
-  align-items: start;
-  background: #fff;
-  border: 1px solid #e8e8e8;
-  border-radius: 16px;
-  padding: 14px;
-}
-
-.badge{
-  width: 36px;
-  height: 36px;
-  border-radius: 999px;
-  background: #111;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 900;
-}
-
-.step h3{
-  margin: 0 0 6px;
-  font-size: 16px;
-}
-
-.step p{
-  margin: 0;
-  color: #444;
-  font-size: 14px;
-  line-height: 1.5;
-}
-
-.cta-row{
-  margin-top: 14px;
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
     :root{
       --max: 1100px;
       --bg: #fafafa;
@@ -75,6 +25,8 @@
       color: var(--text);
       background: var(--bg);
     }
+
+    .muted{ color:#555; }
 
     /* Header */
     header{
@@ -127,7 +79,7 @@
     .btn.primary{ background:#111; color:#fff; }
     .btn.outline{ background:transparent; color:#111; border-color:#111; }
     .btn.wa{ background:#25D366; color:#fff; }
-    .btn.mail{ background:#2563eb; color:#fff; } /* blue */
+    .btn.mail{ background:#2563eb; color:#fff; }
 
     /* Layout */
     main{
@@ -246,6 +198,68 @@
       font-weight: 900;
     }
 
+    /* Process block */
+    .process{
+      margin-top: 12px;
+      display: grid;
+      gap: 12px;
+    }
+    .step{
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 12px;
+      align-items: start;
+      background: #fff;
+      border: 1px solid #e8e8e8;
+      border-radius: 16px;
+      padding: 14px;
+    }
+    .badge{
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      background: #111;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+    }
+    .step h3{
+      margin: 0 0 6px;
+      font-size: 16px;
+    }
+    .step p{
+      margin: 0;
+      color: #444;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .cta-row{
+      margin-top: 14px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    /* Apply form */
+    .apply-form{
+      background:#fff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px;
+      display:grid;
+      gap:10px;
+      margin-top: 12px;
+    }
+    .apply-form .row2{ margin: 0; }
+    .hint{
+      margin:0;
+      font-size:12px;
+      color:#666;
+    }
+
     footer{
       border-top: 1px solid var(--border);
       padding: 18px;
@@ -273,7 +287,6 @@
       transition: transform .15s ease, opacity .15s ease;
     }
     .wa-float:hover{ transform: translateY(-2px); }
-
     .wa-dot{
       width: 10px; height: 10px; border-radius: 50%;
       background: rgba(255,255,255,.9);
@@ -294,6 +307,7 @@
       <a class="brand" href="#top">EU-Ansökan</a>
       <div class="nav-actions">
         <a class="btn outline" href="#hur">Hur det funkar</a>
+        <a class="btn outline" href="#ansokan">Ansökan</a>
         <a class="btn primary" href="#kontakt">Kontakt</a>
       </div>
     </nav>
@@ -309,7 +323,7 @@
         </p>
 
         <div style="display:flex; gap:10px; flex-wrap:wrap;">
-          <a class="btn primary" href="#kontakt">Kontakta oss</a>
+          <a class="btn primary" href="#ansokan">Starta ansökan</a>
           <a class="btn outline" href="#krav">Se krav</a>
         </div>
 
@@ -389,53 +403,84 @@
         <p style="margin-top:10px; font-size:13px; color:#666;">Exakta krav beror på land och universitet.</p>
       </div>
     </section>
-<section class="section" id="ansokan">
-  <h2>Ansökningsprocess</h2>
-  <p class="muted">
-    Så här går det till – tydligt steg för steg.
-  </p>
 
-  <div class="process">
-    <div class="step">
-      <div class="badge">1</div>
-      <div>
-        <h3>Fyll i ansökan</h3>
-        <p>Du fyller i formuläret med dina uppgifter och vad du vill söka.</p>
+    <section class="section" id="ansokan">
+      <h2>Ansökningsprocess</h2>
+      <p class="muted">Så här går det till – tydligt steg för steg.</p>
+
+      <div class="process">
+        <div class="step">
+          <div class="badge">1</div>
+          <div>
+            <h3>Fyll i ansökan</h3>
+            <p>Du fyller i formuläret med dina uppgifter och vad du vill söka.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="badge">2</div>
+          <div>
+            <h3>Vi granskar</h3>
+            <p>Vi går igenom behörighet, dokument och nästa steg.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="badge">3</div>
+          <div>
+            <h3>Du får en plan</h3>
+            <p>Tydlig tidslinje: vad som behövs och när du ska göra det.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="badge">4</div>
+          <div>
+            <h3>Starta din ansökan</h3>
+            <p>Vi hjälper dig fram till att allt är klart och inskickat.</p>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div class="step">
-      <div class="badge">2</div>
-      <div>
-        <h3>Vi granskar</h3>
-        <p>Vi går igenom behörighet, dokument och nästa steg.</p>
+      <!-- ✅ Ansökan skickas till din mail via mailto -->
+      <form class="apply-form" id="applyForm">
+        <div class="row2">
+          <input type="text" id="applyName" placeholder="Ditt namn" required />
+          <input type="email" id="applyEmail" placeholder="Din e-post" required />
+        </div>
+
+        <div class="row2">
+          <select id="applyProgram" required>
+            <option value="" disabled selected>Välj program</option>
+            <option value="Läkarprogram">Läkarprogram</option>
+            <option value="Tandläkarprogram">Tandläkarprogram</option>
+            <option value="Annat">Annat</option>
+          </select>
+
+          <select id="applyLand" required>
+            <option value="" disabled selected>Välj land</option>
+            <option value="EU (generellt)">EU (generellt)</option>
+            <option value="Slovakien">Slovakien</option>
+            <option value="Polen">Polen</option>
+            <option value="Rumänien">Rumänien</option>
+            <option value="Ungern">Ungern</option>
+            <option value="Annat">Annat</option>
+          </select>
+        </div>
+
+        <textarea id="applyMsg" placeholder="Skriv kort: behörighet, frågor, när du vill börja, etc." required></textarea>
+
+        <button class="btn primary" type="submit">Skicka ansökan</button>
+        <p class="hint">Obs: När du klickar skickas ansökan till oss via din e-postapp.</p>
+      </form>
+
+      <div class="cta-row">
+        <a class="btn outline" href="#kontakt">Fråga oss först</a>
+        <a class="btn wa" href="https://wa.me/46739905006?text=Hej!%20Jag%20vill%20ans%C3%B6ka%20till%20l%C3%A4karstudier%20inom%20EU." target="_blank" rel="noopener">
+          Chatta på WhatsApp
+        </a>
       </div>
-    </div>
-
-    <div class="step">
-      <div class="badge">3</div>
-      <div>
-        <h3>Du får en plan</h3>
-        <p>Tydlig tidslinje: vad som behövs och när du ska göra det.</p>
-      </div>
-    </div>
-
-    <div class="step">
-      <div class="badge">4</div>
-      <div>
-        <h3>Starta din ansökan</h3>
-        <p>Vi hjälper dig fram till att allt är klart och inskickat.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="cta-row">
-    <a class="btn primary" href="https://docs.google.com/forms/d/1_kVEIlfKADQNBPkPBNCNvYWhqsrJBp1rWhVu_KuGQqw/viewform" target="_blank" rel="noopener">
-      Ansök via Google Form
-    </a>
-    <a class="btn outline" href="#kontakt">Fråga oss först</a>
-  </div>
-</section>
+    </section>
 
     <section class="section" id="faq">
       <h2>FAQ</h2>
@@ -458,20 +503,18 @@
     <section class="section" id="kontakt">
       <h2>Kontakt</h2>
       <div class="card" style="display:grid; gap:10px;">
-        <div>
-          <b>WhatsApp:</b> +46 73 990 50 06
-        </div>
-        <div>
-          <b>E-post:</b> <span id="emailText">dinmail@example.com</span>
-        </div>
+        <div><b>WhatsApp:</b> +46 73 990 50 06</div>
+        <div><b>E-post:</b> <span id="emailText">wisam.2009123@hotmail.com</span></div>
 
         <div style="display:flex; gap:10px; flex-wrap:wrap;">
-          <a class="btn wa" href="https://wa.me/46739905006?text=Hej!%20Jag%20vill%20ans%C3%B6ka%20till%20l%C3%A4karstudier%20inom%20EU." target="_blank" rel="noopener">Skriv på WhatsApp</a>
+          <a class="btn wa" href="https://wa.me/46739905006?text=Hej!%20Jag%20vill%20ans%C3%B6ka%20till%20l%C3%A4karstudier%20inom%20EU." target="_blank" rel="noopener">
+            Skriv på WhatsApp
+          </a>
           <a class="btn mail" id="mailBtn2" href="#">Skicka e-post</a>
         </div>
 
         <p style="margin:0; font-size:12px; color:#666;">
-          Tips: Lägg in din riktiga e-post i koden (dinmail@example.com).
+          Alla e-postlänkar går till: wisam.2009123@hotmail.com
         </p>
       </div>
     </section>
@@ -481,7 +524,7 @@
     © <span id="y"></span> EU-Ansökan
   </footer>
 
-  <!-- ✅ Floating WhatsApp button (bottom-right) -->
+  <!-- Floating WhatsApp -->
   <a class="wa-float"
      href="https://wa.me/46739905006?text=Hej!%20Jag%20vill%20ans%C3%B6ka%20till%20l%C3%A4karstudier%20inom%20EU."
      target="_blank" rel="noopener" aria-label="Chatta på WhatsApp">
@@ -490,16 +533,18 @@
   </a>
 
   <script>
-    // Change this to your real email:
+    // ✅ Your email:
     const EMAIL = "wisam.2009123@hotmail.com";
 
-    // Use selected values to build a nicer WhatsApp / Email message:
+    // Update contact email text
+    document.getElementById("emailText").textContent = EMAIL;
+
+    // Quick contact builder (WhatsApp + Email)
     const waBtn = document.getElementById("waBtn");
     const mailBtn = document.getElementById("mailBtn");
     const mailBtn2 = document.getElementById("mailBtn2");
-    document.getElementById("emailText").textContent = EMAIL;
 
-    function buildMessage(){
+    function buildQuickMessage(){
       const program = document.getElementById("program").value;
       const land = document.getElementById("land").value;
       const extra = document.getElementById("msg").value.trim();
@@ -508,24 +553,47 @@
       return msg;
     }
 
-    function updateLinks(){
-      const text = encodeURIComponent(buildMessage());
+    function updateQuickLinks(){
+      const text = encodeURIComponent(buildQuickMessage());
       waBtn.href = `https://wa.me/46739905006?text=${text}`;
 
       const subject = encodeURIComponent("Fråga om ansökan – EU-Ansökan");
-      const body = encodeURIComponent(buildMessage());
+      const body = encodeURIComponent(buildQuickMessage());
       const mailto = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
       mailBtn.href = mailto;
       mailBtn2.href = mailto;
     }
 
     ["program","land","msg"].forEach(id => {
-      document.getElementById(id).addEventListener("input", updateLinks);
-      document.getElementById(id).addEventListener("change", updateLinks);
+      document.getElementById(id).addEventListener("input", updateQuickLinks);
+      document.getElementById(id).addEventListener("change", updateQuickLinks);
     });
 
-    updateLinks();
+    updateQuickLinks();
     document.getElementById("y").textContent = new Date().getFullYear();
+
+    // ✅ Application form (mailto)
+    const applyForm = document.getElementById("applyForm");
+    applyForm.addEventListener("submit", function(e){
+      e.preventDefault();
+
+      const name = document.getElementById("applyName").value.trim();
+      const email = document.getElementById("applyEmail").value.trim();
+      const program = document.getElementById("applyProgram").value;
+      const land = document.getElementById("applyLand").value;
+      const msg = document.getElementById("applyMsg").value.trim();
+
+      const subject = encodeURIComponent("Ny ansökan – EU-Ansökan");
+      const body = encodeURIComponent(
+        `Namn: ${name}\n` +
+        `E-post: ${email}\n` +
+        `Program: ${program}\n` +
+        `Land: ${land}\n\n` +
+        `Meddelande:\n${msg}`
+      );
+
+      window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
+    });
   </script>
 </body>
 </html>
