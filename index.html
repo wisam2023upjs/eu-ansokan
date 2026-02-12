@@ -88,4 +88,349 @@
 
     .hero{
       background: var(--card);
-      border: 1px solid var(--border
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 22px;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .pill{
+      display:inline-block;
+      font-size: 13px;
+      padding: 6px 10px;
+      border: 1px solid #ddd;
+      border-radius: 999px;
+      background:#fff;
+      margin-bottom: 10px;
+      color: #222;
+    }
+
+    h1{
+      font-size: 40px;
+      line-height: 1.08;
+      margin: 0 0 10px;
+      letter-spacing: -0.6px;
+    }
+    p{
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .grid3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .card{
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px;
+    }
+    .card h3{
+      margin: 0 0 8px;
+      font-size: 16px;
+    }
+    .card p{
+      margin: 0;
+      font-size: 14px;
+      color: #444;
+    }
+
+    .side{
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px;
+    }
+    .side h2{
+      margin: 0 0 8px;
+      font-size: 20px;
+    }
+    .side .muted{
+      margin:0 0 12px;
+      font-size: 14px;
+      color:#555;
+    }
+    .row2{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    select, input, textarea{
+      width: 100%;
+      padding: 12px;
+      border-radius: 12px;
+      border: 1px solid #ddd;
+      background: #fff;
+      font-size: 15px;
+    }
+    textarea{ min-height: 100px; resize: vertical; }
+
+    .section{
+      margin-top: 22px;
+    }
+    .section h2{
+      margin: 0 0 10px;
+      font-size: 24px;
+      letter-spacing: -0.2px;
+    }
+
+    details{
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 12px 14px;
+    }
+    summary{
+      cursor: pointer;
+      font-weight: 900;
+    }
+
+    footer{
+      border-top: 1px solid var(--border);
+      padding: 18px;
+      text-align: center;
+      color:#666;
+      background: #fff;
+    }
+
+    /* Floating WhatsApp */
+    .wa-float{
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 9999;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding: 12px 14px;
+      border-radius: 999px;
+      background: #25D366;
+      color:#fff;
+      text-decoration:none;
+      font-weight: 900;
+      box-shadow: 0 12px 28px rgba(0,0,0,.18);
+      transition: transform .15s ease, opacity .15s ease;
+    }
+    .wa-float:hover{ transform: translateY(-2px); }
+
+    .wa-dot{
+      width: 10px; height: 10px; border-radius: 50%;
+      background: rgba(255,255,255,.9);
+    }
+
+    @media (max-width: 900px){
+      .hero{ grid-template-columns: 1fr; }
+      .grid3{ grid-template-columns: 1fr; }
+      .row2{ grid-template-columns: 1fr; }
+      h1{ font-size: 32px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a class="brand" href="#top">EU-Ansökan</a>
+      <div class="nav-actions">
+        <a class="btn outline" href="#hur">Hur det funkar</a>
+        <a class="btn primary" href="#kontakt">Kontakt</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div>
+        <span class="pill">Ansöknings- & vägledningssida</span>
+        <h1>Sök in till läkarstudier inom EU – med tydlig plan</h1>
+        <p>
+          Fyll i dina uppgifter så får du en tydlig väg framåt: behörighet, dokument, tidslinje och nästa steg.
+        </p>
+
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn primary" href="#kontakt">Kontakta oss</a>
+          <a class="btn outline" href="#krav">Se krav</a>
+        </div>
+
+        <div class="grid3">
+          <div class="card">
+            <h3>1) Skicka intresse</h3>
+            <p>Snabbt och enkelt – 2–3 minuter.</p>
+          </div>
+          <div class="card">
+            <h3>2) Kontroll</h3>
+            <p>Vi går igenom behörighet & nästa steg.</p>
+          </div>
+          <div class="card">
+            <h3>3) Plan</h3>
+            <p>Du får en tydlig plan fram till ansökan.</p>
+          </div>
+        </div>
+      </div>
+
+      <aside class="side">
+        <h2>Snabb kontakt</h2>
+        <p class="muted">Välj program + land så hjälper vi dig snabbare.</p>
+
+        <div class="row2">
+          <select id="program">
+            <option value="Läkarprogram" selected>Läkarprogram</option>
+            <option value="Tandläkarprogram">Tandläkarprogram</option>
+            <option value="Annat">Annat</option>
+          </select>
+
+          <select id="land">
+            <option value="EU (generellt)" selected>EU (generellt)</option>
+            <option value="Slovakien">Slovakien</option>
+            <option value="Polen">Polen</option>
+            <option value="Rumänien">Rumänien</option>
+          </select>
+        </div>
+
+        <textarea id="msg" placeholder="Skriv en kort fråga (valfritt)"></textarea>
+
+        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
+          <a class="btn wa" id="waBtn" href="#" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn mail" id="mailBtn" href="#">E-post</a>
+        </div>
+
+        <p style="margin-top:10px; font-size:12px; color:#666;">
+          Vi svarar så snabbt vi kan. Du kan också skriva på WhatsApp direkt.
+        </p>
+      </aside>
+    </section>
+
+    <section class="section" id="hur">
+      <h2>Hur det funkar</h2>
+      <div class="grid3">
+        <div class="card">
+          <h3>Behörighet</h3>
+          <p>Vilka kurser/dokument krävs för landet och programmet.</p>
+        </div>
+        <div class="card">
+          <h3>Ansökan</h3>
+          <p>Deadlines, dokument, uppladdning och process.</p>
+        </div>
+        <div class="card">
+          <h3>Förberedelse</h3>
+          <p>Studieplan, tips och struktur inför prov/intervju (om det finns).</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="krav">
+      <h2>Krav (exempel)</h2>
+      <div class="card">
+        <ul style="margin:0; padding-left:18px; color:#333; line-height:1.6;">
+          <li>Behörighet via gymnasiet/Komvux (ofta Bio/Kemi/Fysik/Matte beroende på program)</li>
+          <li>Pass/ID</li>
+          <li>Betyg + ev. översättning</li>
+          <li>Ev. språkkrav beroende på skola</li>
+        </ul>
+        <p style="margin-top:10px; font-size:13px; color:#666;">Exakta krav beror på land och universitet.</p>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <h2>FAQ</h2>
+      <div style="display:grid; gap:10px;">
+        <details>
+          <summary>Är detta reklam?</summary>
+          <p style="margin-top:8px; color:#444;">Det kan hållas helt neutralt: fokus på fakta, process och alternativ.</p>
+        </details>
+        <details>
+          <summary>Hur snabbt kan jag börja?</summary>
+          <p style="margin-top:8px; color:#444;">Det beror på deadlines och provdatum. Du får en tydlig tidslinje efter kontakt.</p>
+        </details>
+        <details>
+          <summary>Kostar det något?</summary>
+          <p style="margin-top:8px; color:#444;">Du kan erbjuda gratis information och eventuell coaching senare (valfritt).</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="section" id="kontakt">
+      <h2>Kontakt</h2>
+      <div class="card" style="display:grid; gap:10px;">
+        <div>
+          <b>WhatsApp:</b> +46 73 990 50 06
+        </div>
+        <div>
+          <b>E-post:</b> <span id="emailText">dinmail@example.com</span>
+        </div>
+
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn wa" href="https://wa.me/46739905006?text=Hej!%20Jag%20vill%20ans%C3%B6ka%20till%20l%C3%A4karstudier%20inom%20EU." target="_blank" rel="noopener">Skriv på WhatsApp</a>
+          <a class="btn mail" id="mailBtn2" href="#">Skicka e-post</a>
+        </div>
+
+        <p style="margin:0; font-size:12px; color:#666;">
+          Tips: Lägg in din riktiga e-post i koden (dinmail@example.com).
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="y"></span> EU-Ansökan
+  </footer>
+
+  <!-- ✅ Floating WhatsApp button (bottom-right) -->
+  <a class="wa-float"
+     href="https://wa.me/46739905006?text=Hej!%20Jag%20vill%20ans%C3%B6ka%20till%20l%C3%A4karstudier%20inom%20EU."
+     target="_blank" rel="noopener" aria-label="Chatta på WhatsApp">
+    <span class="wa-dot"></span>
+    WhatsApp
+  </a>
+
+  <script>
+    // Change this to your real email:
+    const EMAIL = "dinmail@example.com";
+
+    // Use selected values to build a nicer WhatsApp / Email message:
+    const waBtn = document.getElementById("waBtn");
+    const mailBtn = document.getElementById("mailBtn");
+    const mailBtn2 = document.getElementById("mailBtn2");
+    document.getElementById("emailText").textContent = EMAIL;
+
+    function buildMessage(){
+      const program = document.getElementById("program").value;
+      const land = document.getElementById("land").value;
+      const extra = document.getElementById("msg").value.trim();
+      let msg = `Hej! Jag vill ha hjälp med ${program} (${land}).`;
+      if(extra) msg += `\n\nFråga: ${extra}`;
+      return msg;
+    }
+
+    function updateLinks(){
+      const text = encodeURIComponent(buildMessage());
+      waBtn.href = `https://wa.me/46739905006?text=${text}`;
+
+      const subject = encodeURIComponent("Fråga om ansökan – EU-Ansökan");
+      const body = encodeURIComponent(buildMessage());
+      const mailto = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
+      mailBtn.href = mailto;
+      mailBtn2.href = mailto;
+    }
+
+    ["program","land","msg"].forEach(id => {
+      document.getElementById(id).addEventListener("input", updateLinks);
+      document.getElementById(id).addEventListener("change", updateLinks);
+    });
+
+    updateLinks();
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
